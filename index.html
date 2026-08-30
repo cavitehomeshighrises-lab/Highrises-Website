@@ -42,7 +42,7 @@ section{padding:70px 20px}
 .card h3{margin:0 0 8px;color:var(--dark);font-size:25px}
 .card p{line-height:1.6;color:#53635a}
 .price{font-size:20px;font-weight:900;color:var(--green)}
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .feature{background:white;padding:24px;border-radius:16px;text-align:center;border-top:5px solid var(--green);box-shadow:0 5px 20px #0000000d}
 .feature .icon{font-size:34px}
 .feature h3{margin:10px 0 6px;color:var(--dark)}
@@ -70,6 +70,21 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
   section{padding:52px 16px}.cards,.features{grid-template-columns:1fr}
   .hero h1{font-size:46px}.hero{padding:55px 16px}.brand span{font-size:14px}
 }
+
+.image-link{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;position:relative;overflow:hidden}
+.image-link img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:.3s}
+.image-link span{position:absolute;left:50%;bottom:16px;transform:translate(-50%,10px);background:rgba(6,77,43,.94);color:white;padding:10px 18px;border-radius:999px;font-weight:800;opacity:0;transition:.3s;white-space:nowrap}
+.image-link:hover img{transform:scale(1.04);filter:brightness(.82)}
+.image-link:hover span,.image-link:focus span{opacity:1;transform:translate(-50%,0)}
+.modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);padding:25px;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-content{background:white;width:min(720px,100%);max-height:90vh;overflow:auto;border-radius:20px;position:relative;box-shadow:0 20px 60px #0006}
+.modal-content img{width:100%;max-height:430px;object-fit:cover}
+.modal-body{padding:24px}
+.modal-body h2{margin:0 0 10px;color:var(--dark);font-size:30px}
+.modal-body p{line-height:1.7;color:#53635a;margin:8px 0}
+.modal-close{position:absolute;right:14px;top:14px;width:40px;height:40px;border:0;border-radius:50%;background:white;color:var(--dark);font-size:25px;font-weight:800;cursor:pointer;box-shadow:0 2px 12px #0003}
+
 </style>
 </head>
 <body>
@@ -78,10 +93,10 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
   <div class="nav-inner">
     <a class="brand" href="#home">
       <img src="images/logo.png" alt="Highrises Green Marketing Company logo">
-      <span>HIGHRISES GREEN MARKETING</span>
+      <span>HIGHRISES GREEN MARKETING COMPANY</span>
     </a>
     <div class="menu">
-      <a href="#home">Home</a><a href="#properties">Properties</a><a href="#why">Why Us</a><a href="#contact">Contact</a>
+      <a href="#home">Home</a><a href="#properties">Properties</a><a href="#why">Aboout Us</a><a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -110,7 +125,255 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
     </div>
     <div class="cards">
       <article class="card" data-category="townhouse">
-        <img src="images/amora.png" alt="Amora Eco-Love Townhomes">
+        <button class="image-link" type="button" data-title="Amora Eco-Love Townhomes" data-image="images/amora.png" 
+		data-details="2-storey townhomes focused on sustainable and comfortable family living.
+		</br>
+		<table>
+		<tr>
+		<td><b>Floor Area:</b></td>
+		<td>44 SQM</td>
+		<td> ————— </td>
+		<td>Privision for Two(2) Bedrooms </td>
+		</tr>
+		<tr>
+		<td><b>Average Lot Area:</b></td>
+		<td>50 SQM (Inner)</td>
+		<td> ————— </td>
+		<td>One(1) toilet and Bath </td>
+		</tr>
+		<tr>
+		<td></td>
+		<td>75 SQM (End)</td>
+		<td> ————— </td>
+		<td>Provision for 1 Car Garage </td>
+		</tr>
+		</table>
+		</br></br>
+		SAMPLE COMPUTATION
+		EFFECTIVE MARCH 1, 2026 </br>
+		<table>
+		<tr>
+		<th><b>PAG-IBIG FINANCING</b></th> 
+		</tr>
+		<tr>
+		<th>HOUSE MODEL </th>
+		<th>Amora-Inner </th>
+		<th>Amora-End </th>
+		</tr>
+		<tr>
+		<td>LOT CLASS</td>
+		<td>Regular Lot</td>
+		<td>Regular Lot</td>
+		</tr>
+		<tr>
+		<td>LOT AREA</td>
+		<td>50 SQM</td>
+		<td>75 SQM</td>
+		</tr>
+		<tr>
+		<td>FLOOR AREA</td>
+		<td>44 SQM</td>
+		<td>44 SQM</td>
+		</tr>
+		<tr>
+		<td>TOTAL CONTRACT PRICE (TCP)</td>
+		<td>₱2,516,400</td>
+		<td>₱2,815,400</td>
+		</tr>
+		<tr>
+		<td>DISCOUNTED TCP (inner only)</td>
+		<td>₱2,408,400</td>
+		<td>— </td>
+		</tr>
+		<tr>
+		<td>DP %</td>
+		<td>4.03%</td>
+		<td>12.85%</td>
+		</tr>
+		<tr>
+		<td>REQUIRED DP</td>
+		<td>₱101,400</td>
+		<td>₱333,400</td>
+		</tr>
+		<tr>
+		<td>RESERVATION FEE</td>
+		<td>₱12,000</td>
+		<td>₱15,000</td>
+		</tr>
+		<tr>
+		<td>BALANCE ON DP</td>
+		<td>₱89,400</td>
+		<td>₱318,400</td>
+		</tr>
+		<tr>
+		<td>MONTHLY DP</td>
+		</tr>
+		<tr>
+		<td>6 MOS</td>
+		<td>₱14,900</td>
+		<td> — </td>
+		</tr>
+		<tr>
+		<td>8 MOS</td>
+		<td>₱11,175</td>
+		<td>—</td>
+		</tr>
+		<tr>
+		<td>9 MOS</td>
+		<td>₱9,933</td>
+		<td>—</td>
+		</tr>
+		<tr>
+		<td>6–8 MOS</td>
+		<td>—</td>
+		<td>₱39,800</td>
+		</tr>
+		<tr>
+		<td>9–12 MOS</td>
+		<td>—</td>
+		<td>₱26,533</td>
+		</tr>
+		<tr>
+		<td>15 MOS</td>
+		<td>—</td>
+		<td>₱21,227</td>
+		</tr>
+		<tr>
+		<td>LOANABLE AMOUNT @ 6.25%</td>
+		<td>₱2,307,000</td>
+		<td>₱2,480,000</td>
+		</tr>
+		<tr>
+		<td>20 YRS</td>
+		<td>₱16,863</td>
+		<td>₱18,127</td>
+		</tr>
+		<tr>
+		<td>25 YRS</td>
+		<td>₱15,218</td>
+		<td>₱16,360</td>
+		</tr>
+		<tr>
+		<td>30 YRS</td>
+		<td>₱14,205</td>
+		<td>₱15,270</td>
+		</tr>
+		<tr>
+		<td>Required Income (30 yrs)</td>
+		<td>₱40,584.56</td>
+		<td>₱43,627.96</td>
+		</tr>
+		</table>
+________________________________________________________
+		<table>
+		<tr>
+		<th><b>BANK FINANCING</b></th> 
+		</tr>
+		<tr>
+		<th>HOUSE MODEL</th>
+		<th>Amora-Inner</th>
+		<th>Amora-End</th>
+		</tr>
+		<tr>
+		<td>LOT CLASS</td>
+		<td>Regular Lot</td>
+		<td>Regular Lot</td>
+		</tr>
+		<tr>
+		<td>LOT AREA</td>
+		<td>50 SQM</td>
+		<td>75 SQM</td>
+		</tr>
+		<tr>
+		<td>FLOOR AREA</td>
+		<td>44 SQM</td>
+		<td>44 SQM</td>
+		</tr>
+		<tr>
+		<td>TOTAL CONTRACT PRICE (TCP)</td>
+		<td>₱2,516,400</td>
+		<td>₱2,815,400</td>
+		</tr>
+		<tr>
+		<td>DISCOUNTED TCP (inner only)</td>
+		<td>₱2,408,400</td>
+		<td>— </td>
+		</tr>
+		<tr>
+		<td></td>
+		<td>10.0%</td>
+		<td>10.0%</td>
+		</tr>
+		<tr>
+		<td>REQUIRED DP</td>
+		<td>₱240,840</td>
+		<td>₱281,340</td>
+		</tr>
+		<tr>
+		<td>RESERVATION FEE</td>
+		<td>₱12,000</td>
+		<td>₱15,000</td>
+		</tr>
+		<tr>
+		<td>BALANCE ON DP</td>
+		<td>₱228,840</td>
+		<td>₱266,340</td>
+		</tr>
+		<tr>
+		<td>MONTHLY DP</td>
+		</tr>
+		<tr>
+		<td>6–8 MOS (RFO)</td>
+		<td>₱28,605</td>
+		<td>₱33,293</td>
+		</tr>
+		<tr>
+		<td>9–12 MOS (OGC)</td>
+		<td>₱19,070</td>
+		<td>₱22,195</td>
+		</tr>
+		<tr>
+		<td>15 MOS</td>
+		<td>₱15,256</td>
+		<td>₱17,756</td>
+		</tr>
+		<tr>
+		<td>LOANABLE AMOUNT</td>
+		<td>₱2,167,560</td>
+		<td>₱2,532,060</td>
+		</tr>
+		<tr>
+		<td>Interest Rate</td>
+		<td>7.50%</td>
+		<td>7.50%</td>
+		</tr>
+		<tr>
+		<td>20 YRS</td>
+		<td>₱17,462</td>
+		<td>₱20,398</td>
+		</tr>
+		<tr>
+		<td>25 YRS</td>
+		<td>₱16,018</td>
+		<td>₱18,712</td>
+		</tr>
+		<tr>
+		<td>30 YRS (selected banks only)</td>
+		<td>₱15,156</td>
+		<td>₱17,705</td>
+		</tr>
+		<tr>
+		<td>Required Income</td>
+		<td>₱50,520 (20 YRS)</td>
+		<td>₱59,016 (20 YRS)</td>
+		</tr>
+		
+		</table>
+		Note:
+The interest rate could be based on indicative rate, but is subject to change without prior notice.
+Applicable to … prevailing rate upon Bank / HDMF Loan TAKE OUT.
+">
+		<img src="images/amora.png" alt="Amora Eco-Love Townhomes"><span>View Details</span></button>
         <div class="card-body">
           <h3>Amora Eco-Love Townhomes</h3>
           <p>2-storey townhomes focused on sustainable and comfortable family living.</p>
@@ -118,7 +381,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
         </div>
       </article>
       <article class="card" data-category="rowhouse">
-        <img src="images/pagsibol.png" alt="Pagsibol Village">
+        <button class="image-link" type="button" data-title="Pagsibol Village" data-image="images/pagsibol.png" data-details="A fresh start in Naic Southeast, with a community designed for growing families. | 45.5 sqm floor area · 54 sqm lot area"><img src="images/pagsibol.png" alt="Pagsibol Village"><span>View Details</span></button>
         <div class="card-body">
           <h3>Pagsibol Village</h3>
           <p>A fresh start in Naic Southeast, with a community designed for growing families.</p>
@@ -126,7 +389,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
         </div>
       </article>
       <article class="card" data-category="condominium">
-        <img src="images/spring.png" alt="Spring Residences">
+        <button class="image-link" type="button" data-title="Spring Residences" data-image="images/spring.png" data-details="Modern condominium living in a prime location beside SM Bicutan. | Convenient city living"><img src="images/spring.png" alt="Spring Residences"><span>View Details</span></button>
         <div class="card-body">
           <h3>Spring Residences</h3>
           <p>Modern condominium living in a prime location beside SM Bicutan.</p>
@@ -134,7 +397,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
         </div>
       </article>
       <article class="card" data-category="condominium">
-        <img src="images/vine.png" alt="Vine Residences">
+        <button class="image-link" type="button" data-title="Vine Residences" data-image="images/vine.png" data-details="A residential community inside the SM City Novaliches complex in Quezon City. | Prime location · Modern living"><img src="images/vine.png" alt="Vine Residences"><span>View Details</span></button>
         <div class="card-body">
           <h3>Vine Residences</h3>
           <p>A residential community inside the SM City Novaliches complex in Quezon City.</p>
@@ -142,7 +405,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
         </div>
       </article>
       <article class="card" data-category="condominium">
-        <img src="images/green2.png" alt="Green 2 Residences">
+        <button class="image-link" type="button" data-title="Green 2 Residences" data-image="images/green2.png" data-details="Comfortable condominium living with modern amenities and a secure community. | Ideal for families & investors"><img src="images/green2.png" alt="Green 2 Residences"><span>View Details</span></button>
         <div class="card-body">
           <h3>Green 2 Residences</h3>
           <p>Comfortable condominium living with modern amenities and a secure community.</p>
@@ -150,7 +413,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
         </div>
       </article>
       <article class="card" data-category="condominium">
-        <img src="images/hill.png" alt="Hill Residences">
+        <button class="image-link" type="button" data-title="Hill Residences" data-image="images/hill.png" data-details="Modern residences with a community atmosphere, amenities, and convenient access. | Live better every day"><img src="images/hill.png" alt="Hill Residences"><span>View Details</span></button>
         <div class="card-body">
           <h3>Hill Residences</h3>
           <p>Modern residences with a community atmosphere, amenities, and convenient access.</p>
@@ -164,15 +427,15 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
 <section id="why" class="about">
   <div class="container">
     <div class="section-title">
-      <h2>Why Choose Highrises?</h2>
-      <p>Your dream home. Our commitment.</p>
+      <h2>About Us</h2>
     </div>
     <div class="features">
-      <div class="feature"><div class="icon">🏡</div><h3>Quality Homes</h3><p>Explore thoughtfully planned residential options for different needs.</p></div>
-      <div class="feature"><div class="icon">📍</div><h3>Prime Locations</h3><p>Choose properties near key establishments, communities, and transport routes.</p></div>
-      <div class="feature"><div class="icon">🌿</div><h3>Green Living</h3><p>Discover projects that promote comfortable and sustainable lifestyles.</p></div>
-      <div class="feature"><div class="icon">🤝</div><h3>Personal Assistance</h3><p>Get guidance throughout your property inquiry and reservation journey.</p></div>
+      <div class="feature"><div class="icon">🏡</div><h3>Building Dreams, One Home at a Time</h3><p>At Highrises Green Marketing Company we believe that a home is more than just a structure—it is the foundation of a happy family and a bright future. Our commitment goes beyond property listings; we are dedicated to finding the perfect sanctuary that fits your lifestyle and aspirations.</p></div>
+	  <div class="feature"><div class="icon">🤝</div><h3>Our Promise to You</h3><p>Our mission is simple: To provide the BEST HOME for our clients while inspiring them with our BEST SERVICE. We don't just close deals; we open doors to new beginnings. By combining professional expertise with a heart for service, we ensure that your journey toward homeownership is seamless, transparent, and rewarding.</p></div>
+      <div class="feature"><div class="icon">🌿</div><h3>Why Choose Us?</h3><p>Discover projects that promote comfortable and sustainable lifestyles.</p></div>
+
     </div>
+		<p><b><center>"God never gives you a dream without also giving you the power to make it come true."</b></br>Let us help you exercise that power. Welcome home!</p></center>
   </div>
 </section>
 
@@ -212,5 +475,41 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
 </footer>
 
 <script>document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelectorAll('.category-btn'),c=document.querySelectorAll('.card');b.forEach(x=>x.onclick=()=>{b.forEach(y=>y.classList.remove('active'));x.classList.add('active');const f=x.dataset.filter;c.forEach(y=>y.classList.toggle('hidden',f!=='all'&&y.dataset.category!==f));});});</script>
+
+<div class="modal" id="propertyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-content">
+    <button class="modal-close" type="button" aria-label="Close">&times;</button>
+    <img id="modalImage" src="" alt="">
+    <div class="modal-body">
+      <h2 id="modalTitle"></h2>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const propertyModal = document.getElementById('propertyModal');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalDetails = document.getElementById('modalDetails');
+
+document.querySelectorAll('.image-link').forEach(btn => {
+  btn.addEventListener('click', () => {
+    modalTitle.textContent = btn.dataset.title;
+    modalImage.src = btn.dataset.image;
+    modalImage.alt = btn.dataset.title;
+    modalDetails.innerHTML = btn.dataset.details.split(' | ').map(x => '<p>' + x + '</p>').join('');
+    propertyModal.classList.add('show');
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => propertyModal.classList.remove('show'));
+propertyModal.addEventListener('click', e => {
+  if (e.target === propertyModal) propertyModal.classList.remove('show');
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') propertyModal.classList.remove('show');
+});
+</script>
 </body>
 </html>
