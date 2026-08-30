@@ -35,7 +35,7 @@ section{padding:70px 20px}
 .section-title{text-align:center;margin-bottom:38px}
 .section-title h2{font-size:38px;margin:0 0 8px;color:var(--dark)}
 .section-title p{margin:0;color:#607066}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.category-wrap{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 0 34px}.category-btn{border:2px solid var(--green);background:white;color:var(--dark);padding:13px 25px;border-radius:999px;font-weight:800;font-size:16px;cursor:pointer;transition:.2s}.category-btn:hover,.category-btn.active{background:var(--green);color:white;transform:translateY(-2px);box-shadow:0 6px 16px #08783b33}.card.hidden{display:none}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #00000012;border:1px solid #e3eee5}
 .card img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .card-body{padding:20px}
@@ -102,8 +102,14 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
       <h2>Featured Properties</h2>
       <p>Explore some of the properties we currently feature.</p>
     </div>
+    <div class="category-wrap" aria-label="Property categories">
+      <button class="category-btn active" type="button" data-filter="all">All Properties</button>
+      <button class="category-btn" type="button" data-filter="townhouse">🏡 Townhouse</button>
+      <button class="category-btn" type="button" data-filter="rowhouse">🏘️ Rowhouse</button>
+      <button class="category-btn" type="button" data-filter="condominium">🏢 Condominium</button>
+    </div>
     <div class="cards">
-      <article class="card">
+      <article class="card" data-category="townhouse">
         <img src="images/amora.png" alt="Amora Eco-Love Townhomes">
         <div class="card-body">
           <h3>Amora Eco-Love Townhomes</h3>
@@ -111,7 +117,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
           <div class="price">44 sqm floor area · 50 sqm lot area</div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" data-category="rowhouse">
         <img src="images/pagsibol.png" alt="Pagsibol Village">
         <div class="card-body">
           <h3>Pagsibol Village</h3>
@@ -119,7 +125,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
           <div class="price">45.5 sqm floor area · 54 sqm lot area</div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" data-category="condominium">
         <img src="images/spring.png" alt="Spring Residences">
         <div class="card-body">
           <h3>Spring Residences</h3>
@@ -127,7 +133,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
           <div class="price">Convenient city living</div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" data-category="condominium">
         <img src="images/vine.png" alt="Vine Residences">
         <div class="card-body">
           <h3>Vine Residences</h3>
@@ -135,7 +141,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
           <div class="price">Prime location · Modern living</div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" data-category="condominium">
         <img src="images/green2.png" alt="Green 2 Residences">
         <div class="card-body">
           <h3>Green 2 Residences</h3>
@@ -143,7 +149,7 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
           <div class="price">Ideal for families & investors</div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" data-category="condominium">
         <img src="images/hill.png" alt="Hill Residences">
         <div class="card-body">
           <h3>Hill Residences</h3>
@@ -205,5 +211,6 @@ footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
   <div class="small">© 2026 Highrises Green Marketing Company. All rights reserved.</div>
 </footer>
 
+<script>document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelectorAll('.category-btn'),c=document.querySelectorAll('.card');b.forEach(x=>x.onclick=()=>{b.forEach(y=>y.classList.remove('active'));x.classList.add('active');const f=x.dataset.filter;c.forEach(y=>y.classList.toggle('hidden',f!=='all'&&y.dataset.category!==f));});});</script>
 </body>
 </html>
