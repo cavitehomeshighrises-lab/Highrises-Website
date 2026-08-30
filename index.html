@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Highrises Green Marketing Company - Your dream home, our commitment. Explore quality homes and residences.">
+<title>Highrises Green Marketing Company | Power of Dreams</title>
+<style>
+:root{
+  --green:#08783b; --dark:#064d2b; --light:#f2faef; --gold:#f5c62d;
+  --text:#17301f; --white:#fff;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#f7faf7}
+a{text-decoration:none;color:inherit}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);box-shadow:0 2px 14px #0002}
+.nav-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--dark)}
+.brand img{width:54px;height:54px;object-fit:contain;border-radius:50%}
+.brand span{font-size:18px}
+.menu{display:flex;gap:24px;font-weight:700;color:#175a36}
+.menu a:hover{color:#d39e00}
+.hero{min-height:620px;display:grid;place-items:center;padding:70px 20px;background:
+linear-gradient(110deg,rgba(3,64,35,.9),rgba(3,93,47,.55),rgba(0,0,0,.15)),
+url("images/amora.png") center/cover}
+.hero-content{max-width:1180px;width:100%;color:white}
+.hero h1{font-size:clamp(42px,7vw,78px);line-height:.95;margin:0 0 18px;max-width:750px}
+.hero p{font-size:clamp(18px,2.2vw,25px);max-width:650px;line-height:1.5}
+.badge{display:inline-block;background:var(--gold);color:#153c20;padding:9px 16px;border-radius:30px;font-weight:800;margin-bottom:18px}
+.btn{display:inline-block;background:var(--gold);color:#173c20;font-weight:800;padding:14px 24px;border-radius:9px;margin:8px 8px 0 0;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn.alt{background:white;color:var(--dark)}
+section{padding:70px 20px}
+.container{max-width:1180px;margin:auto}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:38px;margin:0 0 8px;color:var(--dark)}
+.section-title p{margin:0;color:#607066}
+.category-wrap{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 0 34px}.category-btn{border:2px solid var(--green);background:white;color:var(--dark);padding:13px 25px;border-radius:999px;font-weight:800;font-size:16px;cursor:pointer;transition:.2s}.category-btn:hover,.category-btn.active{background:var(--green);color:white;transform:translateY(-2px);box-shadow:0 6px 16px #08783b33}.card.hidden{display:none}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #00000012;border:1px solid #e3eee5}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card-body{padding:20px}
+.card h3{margin:0 0 8px;color:var(--dark);font-size:25px}
+.card p{line-height:1.6;color:#53635a}
+.price{font-size:20px;font-weight:900;color:var(--green)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feature{background:white;padding:24px;border-radius:16px;text-align:center;border-top:5px solid var(--green);box-shadow:0 5px 20px #0000000d}
+.feature .icon{font-size:34px}
+.feature h3{margin:10px 0 6px;color:var(--dark)}
+.feature p{margin:0;color:#647269;line-height:1.5}
+.about{background:linear-gradient(135deg,#eef8ee,#fff)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about img{width:100%;max-height:540px;object-fit:cover;border-radius:22px;box-shadow:0 14px 35px #0002}
+.about h2{font-size:42px;color:var(--dark);margin:0 0 15px}
+.about p{font-size:18px;line-height:1.75;color:#56645b}
+.contact{background:var(--dark);color:white}
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.contact h2{font-size:42px;margin-top:0}
+.contact p{font-size:18px;line-height:1.7;color:#dcecdf}
+.contact-box{background:white;color:var(--text);border-radius:18px;padding:28px}
+.contact-item{padding:12px 0;border-bottom:1px solid #ddd;font-size:17px}
+.contact-item:last-child{border:0}
+.contact-item strong{display:block;color:var(--dark);margin-bottom:4px}
+footer{background:#03351d;color:#d8e8dc;text-align:center;padding:24px}
+.small{font-size:13px;color:#9bb4a4;margin-top:8px}
+@media(max-width:850px){
+  .menu{display:none}.cards{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr}.hero{min-height:560px}
+}
+@media(max-width:560px){
+  section{padding:52px 16px}.cards,.features{grid-template-columns:1fr}
+  .hero h1{font-size:46px}.hero{padding:55px 16px}.brand span{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#home">
+      <img src="images/logo.png" alt="Highrises Green Marketing Company logo">
+      <span>HIGHRISES GREEN MARKETING</span>
+    </a>
+    <div class="menu">
+      <a href="#home">Home</a><a href="#properties">Properties</a><a href="#why">Why Us</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-content">
+    <span class="badge">POWER OF DREAMS</span>
+    <h1>Your Dream Home Is Within Reach.</h1>
+    <p>Discover quality homes and residences in strategic locations—designed for comfortable living, smart investment, and a better future.</p>
+    <a class="btn" href="#properties">Explore Properties</a>
+    <a class="btn alt" href="#contact">Reserve Your Unit</a>
+  </div>
+</header>
+
+<section id="properties">
+  <div class="container">
+    <div class="section-title">
+      <h2>Featured Properties</h2>
+      <p>Explore some of the properties we currently feature.</p>
+    </div>
+    <div class="category-wrap" aria-label="Property categories">
+      <button class="category-btn active" type="button" data-filter="all">All Properties</button>
+      <button class="category-btn" type="button" data-filter="townhouse">🏡 Townhouse</button>
+      <button class="category-btn" type="button" data-filter="rowhouse">🏘️ Rowhouse</button>
+      <button class="category-btn" type="button" data-filter="condominium">🏢 Condominium</button>
+    </div>
+    <div class="cards">
+      <article class="card" data-category="townhouse">
+        <img src="images/amora.png" alt="Amora Eco-Love Townhomes">
+        <div class="card-body">
+          <h3>Amora Eco-Love Townhomes</h3>
+          <p>2-storey townhomes focused on sustainable and comfortable family living.</p>
+          <div class="price">44 sqm floor area · 50 sqm lot area</div>
+        </div>
+      </article>
+      <article class="card" data-category="rowhouse">
+        <img src="images/pagsibol.png" alt="Pagsibol Village">
+        <div class="card-body">
+          <h3>Pagsibol Village</h3>
+          <p>A fresh start in Naic Southeast, with a community designed for growing families.</p>
+          <div class="price">45.5 sqm floor area · 54 sqm lot area</div>
+        </div>
+      </article>
+      <article class="card" data-category="condominium">
+        <img src="images/spring.png" alt="Spring Residences">
+        <div class="card-body">
+          <h3>Spring Residences</h3>
+          <p>Modern condominium living in a prime location beside SM Bicutan.</p>
+          <div class="price">Convenient city living</div>
+        </div>
+      </article>
+      <article class="card" data-category="condominium">
+        <img src="images/vine.png" alt="Vine Residences">
+        <div class="card-body">
+          <h3>Vine Residences</h3>
+          <p>A residential community inside the SM City Novaliches complex in Quezon City.</p>
+          <div class="price">Prime location · Modern living</div>
+        </div>
+      </article>
+      <article class="card" data-category="condominium">
+        <img src="images/green2.png" alt="Green 2 Residences">
+        <div class="card-body">
+          <h3>Green 2 Residences</h3>
+          <p>Comfortable condominium living with modern amenities and a secure community.</p>
+          <div class="price">Ideal for families & investors</div>
+        </div>
+      </article>
+      <article class="card" data-category="condominium">
+        <img src="images/hill.png" alt="Hill Residences">
+        <div class="card-body">
+          <h3>Hill Residences</h3>
+          <p>Modern residences with a community atmosphere, amenities, and convenient access.</p>
+          <div class="price">Live better every day</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why Choose Highrises?</h2>
+      <p>Your dream home. Our commitment.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="icon">🏡</div><h3>Quality Homes</h3><p>Explore thoughtfully planned residential options for different needs.</p></div>
+      <div class="feature"><div class="icon">📍</div><h3>Prime Locations</h3><p>Choose properties near key establishments, communities, and transport routes.</p></div>
+      <div class="feature"><div class="icon">🌿</div><h3>Green Living</h3><p>Discover projects that promote comfortable and sustainable lifestyles.</p></div>
+      <div class="feature"><div class="icon">🤝</div><h3>Personal Assistance</h3><p>Get guidance throughout your property inquiry and reservation journey.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="container about-grid">
+    <img src="images/amora.png" alt="Featured Highrises property">
+    <div>
+      <h2>Build Your Future With Us</h2>
+      <p>At Highrises Green Marketing Company, we help homebuyers and investors discover property opportunities that fit their goals.</p>
+      <p>From modern townhomes to condominium residences, our goal is simple: make your journey toward owning a home clearer, easier, and more confident.</p>
+      <a class="btn" href="#contact">Talk to Us Today</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Reserve Your Unit Today!</h2>
+      <p>Ready to find your next home or investment? Contact Highrises Green Marketing Company for property details, availability, and reservation assistance.</p>
+      <a class="btn" href="tel:09245972798">📞 Call 0924-597-2798</a>
+      <a class="btn alt" href="mailto:cavitehomeshighrises@gmail.com">✉️ Send Email</a>
+    </div>
+    <div class="contact-box">
+      <div class="contact-item"><strong>📱 Phone</strong>0924-597-2798</div>
+      <div class="contact-item"><strong>📧 Email</strong>cavitehomeshighrises@gmail.com</div>
+      <div class="contact-item"><strong>📜 HLURB</strong>RFO4A-B-2092</div>
+      <div class="contact-item"><strong>🪪 PRC No.</strong>0035606</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>HIGHRISES GREEN MARKETING COMPANY</strong>
+  <div class="small">POWER OF DREAMS · Your Dream Home. Our Commitment.</div>
+  <div class="small">© 2026 Highrises Green Marketing Company. All rights reserved.</div>
+</footer>
+
+<script>document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelectorAll('.category-btn'),c=document.querySelectorAll('.card');b.forEach(x=>x.onclick=()=>{b.forEach(y=>y.classList.remove('active'));x.classList.add('active');const f=x.dataset.filter;c.forEach(y=>y.classList.toggle('hidden',f!=='all'&&y.dataset.category!==f));});});</script>
+</body>
+</html>
